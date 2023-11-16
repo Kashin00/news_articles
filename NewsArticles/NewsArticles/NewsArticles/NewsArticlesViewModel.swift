@@ -9,7 +9,16 @@ import Foundation
 
 class NewsArticlesViewModel: NewsArticlesViewModelInput {
     
-    @Published var articles: [Article] = []
+    @Published var articles: [Article] = [] {
+        didSet {
+            isLoading = false
+        }
+    }
+    @Published var searchedArticles: [Article] = []
+    @Published var searchableText = ""
+    @Published var isLoading = false
+    
+    private var initialArticles: [Article] = []
     
     private let dataHandler: NewsArticlesViewModelDataHandlerInput
     
@@ -19,9 +28,23 @@ class NewsArticlesViewModel: NewsArticlesViewModelInput {
     
     @MainActor
     func viewDidAppear() {
+        isLoading = true
         Task {
             articles = try await dataHandler.fetchTopHeadlines() ?? []
+            initialArticles = articles
+            searchedArticles = Array(articles.prefix(4))
         }
     }
     
+    func searchButtonTapped() {
+        isLoading = true
+        DispatchQueue.main.asyncAfter(deadline: .now()+3) {
+            self.articles = self.searchedArticles
+        }
+        print(#function)
+    }
+    
+    func searchBarCancelButtonTapped() {
+        self.articles = initialArticles
+    }
 }

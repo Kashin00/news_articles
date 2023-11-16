@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA75C2072B06DC9C0000F071 /* ArticleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA75C2062B06DC9C0000F071 /* ArticleListView.swift */; };
 		BA827B792B0682A000BF0CFC /* ArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA827B782B0682A000BF0CFC /* ArticleView.swift */; };
 		BAAADF4C2B065BD500553127 /* NewsArticlesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAADF4B2B065BD500553127 /* NewsArticlesApp.swift */; };
 		BAAADF4E2B065BD500553127 /* NewsArticlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAADF4D2B065BD500553127 /* NewsArticlesView.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BA75C2062B06DC9C0000F071 /* ArticleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListView.swift; sourceTree = "<group>"; };
 		BA827B782B0682A000BF0CFC /* ArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleView.swift; sourceTree = "<group>"; };
 		BAAADF482B065BD500553127 /* NewsArticles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsArticles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAAADF4B2B065BD500553127 /* NewsArticlesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsArticlesApp.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			children = (
 				BAAADF4D2B065BD500553127 /* NewsArticlesView.swift */,
 				BA827B782B0682A000BF0CFC /* ArticleView.swift */,
+				BA75C2062B06DC9C0000F071 /* ArticleListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				BAAADF612B06679B00553127 /* NetworkManager.swift in Sources */,
 				BAAADF4E2B065BD500553127 /* NewsArticlesView.swift in Sources */,
 				BAAADF662B06687B00553127 /* Article.swift in Sources */,
+				BA75C2072B06DC9C0000F071 /* ArticleListView.swift in Sources */,
 				BAAADF6E2B0681D600553127 /* NewsArticlesViewModelInput.swift in Sources */,
 				BAAADF682B0668B100553127 /* ArticleSource.swift in Sources */,
 				BAAADF4C2B065BD500553127 /* NewsArticlesApp.swift in Sources */,

@@ -13,23 +13,25 @@ struct NewsArticlesView<ViewModel>: View where ViewModel: NewsArticlesViewModelI
     
     var body: some View {
         NavigationView {
-            List(viewModel.articles) { element in
-                NavigationLink(destination: {
-                    EmptyView()
-                }, label: {
-                    ArticleView(arcticle: element)
+            ZStack {
+                // We need to handle Cancel button from search bar and use @Environment(\.isSearching) for this case, so .searchable should be from global state. As a result, onSubmit should also be on a global state
+                ArticleListView(articles: $viewModel.articles, didEndEditing: {
+                    viewModel.searchBarCancelButtonTapped()
                 })
+                .searchable(text: $viewModel.searchableText, prompt: "Search")
+                .onSubmit(of: .search) {
+                    viewModel.searchButtonTapped()
+                }
+                
+                if viewModel.isLoading {
+                    ProgressView()
+                }
             }
             .navigationTitle("Articles")
         }
+        
         .onAppear {
             viewModel.viewDidAppear()
         }
-    }
-}
-
-struct NewsArticlesView_Previews: PreviewProvider {
-    static var previews: some View {
-        NewsArticlesView(viewModel: NewsArticlesViewModel())
     }
 }
