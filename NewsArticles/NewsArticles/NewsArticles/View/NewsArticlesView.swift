@@ -13,14 +13,13 @@ struct NewsArticlesView<ViewModel>: View where ViewModel: NewsArticlesViewModelI
     
     var body: some View {
         NavigationView {
-            NavigationLink(destination: {
-                EmptyView()
-            }, label: {
-                List(viewModel.articles, id: \.id) { article in
-                    Text(article.title)
-                }
-                    
-            })
+            List(viewModel.articles) { element in
+                NavigationLink(destination: {
+                    EmptyView()
+                }, label: {
+                    ArticleView(arcticle: element)
+                })
+            }
             .navigationTitle("Articles")
         }
         .onAppear {
