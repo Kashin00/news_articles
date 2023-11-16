@@ -19,11 +19,11 @@ struct Article: Codable {
         case urlToImage
     }
     
+    let id = UUID()
     let source: ArticleSource
     let title: String
     let url: String
     let publishedAt: String
-    
     let author: String?
     let description: String?
     let urlToImage: String?

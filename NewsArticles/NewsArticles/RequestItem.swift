@@ -18,6 +18,7 @@ protocol EndPointType {
 
 enum RequestItem {
     case search(_ translateModel: SearchRequest)
+    case topHeadlines(_ countyTag: String)
     
     private var apiKey: String {
         "40a508255002495e8586d0be55ee1c16"
@@ -31,7 +32,7 @@ extension RequestItem: EndPointType {
     
     var version: String {
         switch self {
-        case .search:
+        case .search, .topHeadlines:
             return "v2/"
         }
     }
@@ -40,14 +41,18 @@ extension RequestItem: EndPointType {
         switch self {
         case .search:
             return "everything"
+        case .topHeadlines:
+            return "top-headlines"
         }
     }
-    
+
     var headers: String {
         var header = ""
         switch self {
         case .search(let request):
             header = "?q=\(request.message)&from=\(request.fromDate)&to=\(request.toDate)&apiKey=\(apiKey)"
+        case .topHeadlines(let countyTag):
+            header = "?country=\(countyTag)&apiKey=\(apiKey)"
         }
     
         return header
@@ -55,7 +60,7 @@ extension RequestItem: EndPointType {
     
     var httpMethod: String {
         switch self {
-        case .search:
+        case .search, .topHeadlines:
             return "GET"
         }
     }

@@ -16,12 +16,15 @@ struct NewsArticlesView<ViewModel>: View where ViewModel: NewsArticlesViewModelI
             NavigationLink(destination: {
                 EmptyView()
             }, label: {
-                Image(systemName: "globe")
-                    .imageScale(.large)
-                    .foregroundColor(.accentColor)
+                List(viewModel.articles, id: \.id) { article in
+                    Text(article.title)
+                }
                     
             })
-            .navigationTitle("1")
+            .navigationTitle("Articles")
+        }
+        .onAppear {
+            viewModel.viewDidAppear()
         }
     }
 }
