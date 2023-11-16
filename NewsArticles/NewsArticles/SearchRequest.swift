@@ -8,7 +8,7 @@
 import Foundation
 
 struct SearchRequest {
-    let message: String
-    let fromDate: String
-    let toDate: String
+    var text = ""
+    var fromDate = ""
+    var toDate = ""
 }

@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 class NewsArticlesViewModel: NewsArticlesViewModelInput {
     
     @Published var articles: [Article] = [] {
@@ -15,7 +16,7 @@ class NewsArticlesViewModel: NewsArticlesViewModelInput {
         }
     }
     @Published var searchedArticles: [Article] = []
-    @Published var searchableText = ""
+    @Published var searchRequest: SearchRequest = SearchRequest()
     @Published var isLoading = false
     
     private var initialArticles: [Article] = []
@@ -36,12 +37,12 @@ class NewsArticlesViewModel: NewsArticlesViewModelInput {
         }
     }
     
+    @MainActor
     func searchButtonTapped() {
         isLoading = true
-        DispatchQueue.main.asyncAfter(deadline: .now()+3) {
-            self.articles = self.searchedArticles
+        Task {
+            articles = try await dataHandler.searchArticles(for: searchRequest) ?? []
         }
-        print(#function)
     }
     
     func searchBarCancelButtonTapped() {

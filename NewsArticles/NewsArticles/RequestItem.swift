@@ -50,7 +50,7 @@ extension RequestItem: EndPointType {
         var header = ""
         switch self {
         case .search(let request):
-            header = "?q=\(request.message)&from=\(request.fromDate)&to=\(request.toDate)&apiKey=\(apiKey)"
+            header = "?q=\(request.text)&from=\(request.fromDate)&to=\(request.toDate)&apiKey=\(apiKey)"
         case .topHeadlines(let countyTag):
             header = "?country=\(countyTag)&apiKey=\(apiKey)"
         }
