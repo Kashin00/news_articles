@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BA40C0E52B07F7D600727DC6 /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA40C0E42B07F7D600727DC6 /* DatePickerView.swift */; };
 		BA40C0E72B08168300727DC6 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA40C0E62B08168300727DC6 /* Date+Extensions.swift */; };
+		BA40C0ED2B081CCF00727DC6 /* ArticleDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA40C0EC2B081CCF00727DC6 /* ArticleDetailsView.swift */; };
 		BA78B83C2B074C6E00267217 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BA78B83E2B074C6E00267217 /* Localizable.strings */; };
 		BA78B8432B07566300267217 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA78B8422B07566300267217 /* String+Extensions.swift */; };
 		BA78B8452B0756F900267217 /* SortTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA78B8442B0756F900267217 /* SortTypeButton.swift */; };
@@ -31,6 +32,7 @@
 /* Begin PBXFileReference section */
 		BA40C0E42B07F7D600727DC6 /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 		BA40C0E62B08168300727DC6 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		BA40C0EC2B081CCF00727DC6 /* ArticleDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailsView.swift; sourceTree = "<group>"; };
 		BA78B83D2B074C6E00267217 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BA78B8422B07566300267217 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		BA78B8442B0756F900267217 /* SortTypeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortTypeButton.swift; sourceTree = "<group>"; };
@@ -65,9 +67,18 @@
 		BA40C0EA2B081C8F00727DC6 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				BA40C0EB2B081CAB00727DC6 /* ArticleDetails */,
 				BAAADF592B06669700553127 /* NewsArticles */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		BA40C0EB2B081CAB00727DC6 /* ArticleDetails */ = {
+			isa = PBXGroup;
+			children = (
+				BA40C0EC2B081CCF00727DC6 /* ArticleDetailsView.swift */,
+			);
+			name = ArticleDetails;
 			sourceTree = "<group>";
 		};
 		BA78B83F2B074CC700267217 /* Resources */ = {
@@ -284,6 +295,7 @@
 				BA78B8432B07566300267217 /* String+Extensions.swift in Sources */,
 				BAAADF4C2B065BD500553127 /* NewsArticlesApp.swift in Sources */,
 				BAAADF6A2B0679E900553127 /* SearchRequest.swift in Sources */,
+				BA40C0ED2B081CCF00727DC6 /* ArticleDetailsView.swift in Sources */,
 				BAAADF5D2B0666B700553127 /* NewsArticlesViewModel.swift in Sources */,
 				BAAADF642B06686800553127 /* ArticlesResponse.swift in Sources */,
 				BA827B792B0682A000BF0CFC /* ArticleView.swift in Sources */,
