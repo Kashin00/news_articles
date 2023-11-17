@@ -14,3 +14,6 @@
 "date_descending" = "Date descending";
 "news_from_date" = "From date";
 "news_to_date" = "To date";
+"published_at" = "Published at: ";
+"created_by" = "Created by: ";
+"source" = "Source: ";
