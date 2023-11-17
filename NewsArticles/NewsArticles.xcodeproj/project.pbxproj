@@ -62,6 +62,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA40C0EA2B081C8F00727DC6 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				BAAADF592B06669700553127 /* NewsArticles */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
 		BA78B83F2B074CC700267217 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,7 +118,7 @@
 				BAAADF4B2B065BD500553127 /* NewsArticlesApp.swift */,
 				BA78B8402B07564B00267217 /* Helpers */,
 				BAAADF5E2B06677C00553127 /* Domain */,
-				BAAADF592B06669700553127 /* NewsArticles */,
+				BA40C0EA2B081C8F00727DC6 /* Modules */,
 				BA78B83F2B074CC700267217 /* Resources */,
 				BAAADF512B065BD700553127 /* Preview Content */,
 			);
