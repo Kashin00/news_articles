@@ -11,4 +11,17 @@ struct SearchRequest {
     var text = ""
     var fromDate = ""
     var toDate = ""
+    var sortType: SortType?
+}
+
+enum SortType: String, CaseIterable, Identifiable {
+    
+    var id: Self {
+        return self
+    }
+    
+    case byTitle = "by_title"
+    case byAuthor = "by_author"
+    case dateAscending = "date_ascending"
+    case dateDescending = "date_descending"
 }

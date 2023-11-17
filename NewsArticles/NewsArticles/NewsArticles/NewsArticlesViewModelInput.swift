@@ -16,4 +16,5 @@ protocol NewsArticlesViewModelInput: ObservableObject {
     func viewDidAppear()
     func searchButtonTapped()
     func searchBarCancelButtonTapped()
+    func sortButtonTapped(with sortType: SortType)
 }

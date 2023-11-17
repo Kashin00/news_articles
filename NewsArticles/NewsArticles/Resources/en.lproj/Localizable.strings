@@ -7,4 +7,8 @@
 */
 
 "articles" = "Articles";
-"search "= "Search";
+"search" = "Search";
+"by_title" = "By title";
+"by_author" = "By author";
+"date_ascending" = "Date ascending";
+"date_descending" = "Date descending";

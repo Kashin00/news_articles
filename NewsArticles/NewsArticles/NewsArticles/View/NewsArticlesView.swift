@@ -28,10 +28,36 @@ struct NewsArticlesView<ViewModel>: View where ViewModel: NewsArticlesViewModelI
                 }
             }
             .navigationTitle("articles")
+            .toolbar {
+                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                    sortMenuButton
+                    dateSelectingButton
+                }
+            }
         }
         
         .onAppear {
             viewModel.viewDidAppear()
+        }
+    }
+    
+    var sortMenuButton: some View {
+        Menu {
+            ForEach(SortType.allCases) { item in
+                SortTypeButton(sortType: item) {
+                    viewModel.sortButtonTapped(with: $0)
+                }
+            }
+        } label: {
+            Image(systemName: "line.3.horizontal.decrease.circle.fill")
+        }
+    }
+    
+    var dateSelectingButton: some View {
+        Button {
+            
+        } label: {
+            Image(systemName: "calendar.badge.clock")
         }
     }
 }

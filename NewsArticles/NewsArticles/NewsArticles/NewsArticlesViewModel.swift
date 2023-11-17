@@ -48,4 +48,8 @@ class NewsArticlesViewModel: NewsArticlesViewModelInput {
     func searchBarCancelButtonTapped() {
         self.articles = initialArticles
     }
+    
+    func sortButtonTapped(with sortType: SortType) {
+        
+    }
 }
