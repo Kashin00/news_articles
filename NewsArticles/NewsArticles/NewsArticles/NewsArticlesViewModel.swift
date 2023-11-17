@@ -23,6 +23,11 @@ class NewsArticlesViewModel: NewsArticlesViewModelInput {
     
     private let dataHandler: NewsArticlesViewModelDataHandlerInput
     
+    private lazy var dateFormatter: DateFormatter = {
+        $0.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        return $0
+    }(DateFormatter())
+    
     init(dataHandler: NewsArticlesViewModelDataHandlerInput = NewsArticlesViewModelDataHandler()) {
         self.dataHandler = dataHandler
     }
@@ -50,6 +55,24 @@ class NewsArticlesViewModel: NewsArticlesViewModelInput {
     }
     
     func sortButtonTapped(with sortType: SortType) {
-        
+        searchRequest.sortType = sortType
+        switch sortType {
+        case .byTitle:
+            articles.sort {
+                $0.title < $1.title
+            }
+        case .byAuthor:
+            articles.sort {
+                $0.author ?? "" < $1.author ?? ""
+            }
+        case .dateAscending:
+            articles.sort {
+                dateFormatter.date(from: $0.publishedAt) ?? Date() < dateFormatter.date(from: $1.publishedAt) ?? Date()
+            }
+        case .dateDescending:
+            articles.sort {
+                dateFormatter.date(from: $0.publishedAt) ?? Date() > dateFormatter.date(from: $1.publishedAt) ?? Date()
+            }
+        }
     }
 }
