@@ -10,6 +10,8 @@ import SwiftUI
 struct NewsArticlesView<ViewModel>: View where ViewModel: NewsArticlesViewModelInput {
     
     @StateObject var viewModel: ViewModel
+    @State var isDatePickerPresented: Bool = false
+    @State private var selectedDate = Date()
     
     var body: some View {
         NavigationView {
@@ -34,6 +36,10 @@ struct NewsArticlesView<ViewModel>: View where ViewModel: NewsArticlesViewModelI
                     dateSelectingButton
                 }
             }
+            .sheet(isPresented: $isDatePickerPresented) {
+                DatePickerView()
+                    .environmentObject(viewModel)
+            }
         }
         
         .onAppear {
@@ -55,7 +61,7 @@ struct NewsArticlesView<ViewModel>: View where ViewModel: NewsArticlesViewModelI
     
     var dateSelectingButton: some View {
         Button {
-            
+            isDatePickerPresented = true
         } label: {
             Image(systemName: "calendar.badge.clock")
         }

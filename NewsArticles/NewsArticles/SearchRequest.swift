@@ -8,9 +8,10 @@
 import Foundation
 
 struct SearchRequest {
+    
     var text = ""
-    var fromDate = ""
-    var toDate = ""
+    var fromDate:  Date?
+    var toDate: Date?
     var sortType: SortType?
 }
 

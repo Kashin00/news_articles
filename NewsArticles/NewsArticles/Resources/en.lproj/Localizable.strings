@@ -12,3 +12,5 @@
 "by_author" = "By author";
 "date_ascending" = "Date ascending";
 "date_descending" = "Date descending";
+"news_from_date" = "From date";
+"news_to_date" = "To date";

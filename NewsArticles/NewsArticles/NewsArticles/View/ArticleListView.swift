@@ -30,8 +30,8 @@ struct ArticleListView: View {
     }
 }
 
-struct NewsArticlesView_Previews: PreviewProvider {
-    static var previews: some View {
-        NewsArticlesView(viewModel: NewsArticlesViewModel())
-    }
-}
+//struct NewsArticlesView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ArticleListView(articles: <#T##Binding<[Article]>#>, didEndEditing: <#T##(() -> ())##(() -> ())##() -> ()#>)
+//    }
+//}
