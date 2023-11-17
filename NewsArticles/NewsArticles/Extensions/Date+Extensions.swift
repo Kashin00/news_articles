@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+extension Date {
+    func removeTimeStamp() -> Date? {
+        return Calendar.current.date(from: Calendar.current.dateComponents([.year, .month, .day], from: self))
+    }
+}
