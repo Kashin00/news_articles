@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		BA40C0E52B07F7D600727DC6 /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA40C0E42B07F7D600727DC6 /* DatePickerView.swift */; };
 		BA40C0E72B08168300727DC6 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA40C0E62B08168300727DC6 /* Date+Extensions.swift */; };
-		BA75C2072B06DC9C0000F071 /* ArticleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA75C2062B06DC9C0000F071 /* ArticleListView.swift */; };
 		BA78B83C2B074C6E00267217 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BA78B83E2B074C6E00267217 /* Localizable.strings */; };
 		BA78B8432B07566300267217 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA78B8422B07566300267217 /* String+Extensions.swift */; };
 		BA78B8452B0756F900267217 /* SortTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA78B8442B0756F900267217 /* SortTypeButton.swift */; };
@@ -32,7 +31,6 @@
 /* Begin PBXFileReference section */
 		BA40C0E42B07F7D600727DC6 /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 		BA40C0E62B08168300727DC6 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
-		BA75C2062B06DC9C0000F071 /* ArticleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListView.swift; sourceTree = "<group>"; };
 		BA78B83D2B074C6E00267217 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BA78B8422B07566300267217 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		BA78B8442B0756F900267217 /* SortTypeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortTypeButton.swift; sourceTree = "<group>"; };
@@ -142,7 +140,6 @@
 			children = (
 				BAAADF4D2B065BD500553127 /* NewsArticlesView.swift */,
 				BA827B782B0682A000BF0CFC /* ArticleView.swift */,
-				BA75C2062B06DC9C0000F071 /* ArticleListView.swift */,
 				BA78B8442B0756F900267217 /* SortTypeButton.swift */,
 				BA40C0E42B07F7D600727DC6 /* DatePickerView.swift */,
 			);
@@ -272,7 +269,6 @@
 				BAAADF612B06679B00553127 /* NetworkManager.swift in Sources */,
 				BAAADF4E2B065BD500553127 /* NewsArticlesView.swift in Sources */,
 				BAAADF662B06687B00553127 /* Article.swift in Sources */,
-				BA75C2072B06DC9C0000F071 /* ArticleListView.swift in Sources */,
 				BAAADF6E2B0681D600553127 /* NewsArticlesViewModelInput.swift in Sources */,
 				BA40C0E72B08168300727DC6 /* Date+Extensions.swift in Sources */,
 				BAAADF682B0668B100553127 /* ArticleSource.swift in Sources */,

@@ -15,7 +15,7 @@ struct NewsArticlesView<ViewModel>: View where ViewModel: NewsArticlesViewModelI
     var body: some View {
         NavigationView {
             ZStack {
-                ArticleListView(articles: $viewModel.articles)
+                articlesList
                 
                 if viewModel.isLoading {
                     ProgressView()
@@ -42,6 +42,16 @@ struct NewsArticlesView<ViewModel>: View where ViewModel: NewsArticlesViewModelI
         }
         .onAppear {
             viewModel.viewDidAppear()
+        }
+    }
+    
+    var articlesList: some View {
+        List(viewModel.articles) { element in
+            NavigationLink(destination: {
+                EmptyView()
+            }, label: {
+                ArticleView(arcticle: element)
+            })
         }
     }
     
