@@ -18,7 +18,7 @@ struct NewsArticlesView<ViewModel>: View where ViewModel: NewsArticlesViewModelI
                 ArticleListView(articles: $viewModel.articles, didEndEditing: {
                     viewModel.searchBarCancelButtonTapped()
                 })
-                .searchable(text: $viewModel.searchRequest.text, prompt: "Search")
+                .searchable(text: $viewModel.searchRequest.text, prompt: "search")
                 .onSubmit(of: .search) {
                     viewModel.searchButtonTapped()
                 }
@@ -27,7 +27,7 @@ struct NewsArticlesView<ViewModel>: View where ViewModel: NewsArticlesViewModelI
                     ProgressView()
                 }
             }
-            .navigationTitle("Articles")
+            .navigationTitle("articles")
         }
         
         .onAppear {

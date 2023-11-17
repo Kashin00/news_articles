@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  NewsArticles
+
+  Created by Матвей Кашин on 17.11.2023.
+  
+*/
+
+"articles" = "Articles";
+"search "= "Search";
