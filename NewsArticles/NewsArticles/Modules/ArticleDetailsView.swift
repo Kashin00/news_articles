@@ -8,13 +8,35 @@
 import SwiftUI
 
 struct ArticleDetailsView: View {
+    
+    var article: Article
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            
+            posterImage
+            Spacer()
+        }
+        .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
+        .navigationBarTitleDisplayMode(.inline)
+    }
+    
+    
+    private var posterImage: some View {
+        AsyncImage(url: article.imageURL) { imagePhase in
+            GeometryReader { geometry in
+                imagePhase.image?
+                    .resizable()
+                    .frame(width: geometry.size.width, height: geometry.size.height / 3, alignment: .center)
+                    .cornerRadius(10)
+            }
+            
+        }
     }
 }
 
 struct ArticleDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        ArticleDetailsView()
+        ArticleDetailsView(article: articleMock)
     }
 }

@@ -28,9 +28,8 @@ struct ArticleView: View {
     }
 }
 
-//struct ArticleView_Previews: PreviewProvider {
-//    static var previews: some View {
-
-//        ArticleView(arcticle: .constant(<#T##value: Article##Article#>))
-//    }
-//}
+struct ArticleView_Previews: PreviewProvider {
+    static var previews: some View {
+        ArticleView(arcticle: articleMock)
+    }
+}

@@ -45,17 +45,17 @@ struct NewsArticlesView<ViewModel>: View where ViewModel: NewsArticlesViewModelI
         }
     }
     
-    var articlesList: some View {
+    private var articlesList: some View {
         List(viewModel.articles) { element in
             NavigationLink(destination: {
-                EmptyView()
+                ArticleDetailsView(article: element)
             }, label: {
                 ArticleView(arcticle: element)
             })
         }
     }
     
-    var sortMenuButton: some View {
+    private var sortMenuButton: some View {
         Menu {
             ForEach(SortType.allCases) { item in
                 SortTypeButton(sortType: item) {
@@ -67,7 +67,7 @@ struct NewsArticlesView<ViewModel>: View where ViewModel: NewsArticlesViewModelI
         }
     }
     
-    var dateSelectingButton: some View {
+    private var dateSelectingButton: some View {
         Button {
             isDatePickerPresented = true
         } label: {

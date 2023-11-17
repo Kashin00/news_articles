@@ -27,4 +27,9 @@ struct Article: Codable, Identifiable {
     let author: String?
     let description: String?
     let urlToImage: String?
+    
+    var imageURL: URL {
+        guard let urlToImage, let url = URL(string: urlToImage) else { return URL(string: "")! }
+        return url
+    }
 }
