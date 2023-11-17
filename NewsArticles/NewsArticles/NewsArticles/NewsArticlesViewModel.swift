@@ -44,14 +44,14 @@ class NewsArticlesViewModel: NewsArticlesViewModelInput {
     
     @MainActor
     func searchButtonTapped() {
-        isLoading = true
-        Task {
-            articles = try await dataHandler.searchArticles(for: searchRequest) ?? []
+        if searchRequest.text.isEmpty {
+            self.articles = initialArticles
+        } else {
+            isLoading = true
+            Task {
+                articles = try await dataHandler.searchArticles(for: searchRequest) ?? []
+            }
         }
-    }
-    
-    func searchBarCancelButtonTapped() {
-        self.articles = initialArticles
     }
     
     func sortButtonTapped(with sortType: SortType) {

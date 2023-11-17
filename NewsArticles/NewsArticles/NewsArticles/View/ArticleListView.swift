@@ -9,10 +9,7 @@ import SwiftUI
 
 struct ArticleListView: View {
     
-    @Environment(\.isSearching) private var isSearching
     @Binding var articles: [Article]
-    
-    var didEndEditing: (() -> ())
     
     var body: some View {
         List(articles) { element in
@@ -21,11 +18,6 @@ struct ArticleListView: View {
             }, label: {
                 ArticleView(arcticle: element)
             })
-            .onChange(of: isSearching) { newValue in
-                if !newValue {
-                    didEndEditing()
-                }
-            }
         }
     }
 }

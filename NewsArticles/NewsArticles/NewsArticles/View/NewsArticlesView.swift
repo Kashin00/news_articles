@@ -11,19 +11,11 @@ struct NewsArticlesView<ViewModel>: View where ViewModel: NewsArticlesViewModelI
     
     @StateObject var viewModel: ViewModel
     @State var isDatePickerPresented: Bool = false
-    @State private var selectedDate = Date()
     
     var body: some View {
         NavigationView {
             ZStack {
-                // We need to handle Cancel button from search bar and use @Environment(\.isSearching) for this case, so .searchable should be from global state. As a result, onSubmit should also be on a global state
-                ArticleListView(articles: $viewModel.articles, didEndEditing: {
-                    viewModel.searchBarCancelButtonTapped()
-                })
-                .searchable(text: $viewModel.searchRequest.text, prompt: "search")
-                .onSubmit(of: .search) {
-                    viewModel.searchButtonTapped()
-                }
+                ArticleListView(articles: $viewModel.articles)
                 
                 if viewModel.isLoading {
                     ProgressView()
@@ -31,6 +23,13 @@ struct NewsArticlesView<ViewModel>: View where ViewModel: NewsArticlesViewModelI
             }
             .navigationTitle("articles")
             .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    TextField("search", text: $viewModel.searchRequest.text)
+                        .submitLabel(.search)
+                        .onSubmit {
+                            viewModel.searchButtonTapped()
+                        }
+                }
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     sortMenuButton
                     dateSelectingButton
