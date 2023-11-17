@@ -40,7 +40,6 @@ struct NewsArticlesView<ViewModel>: View where ViewModel: NewsArticlesViewModelI
                     .environmentObject(viewModel)
             }
         }
-        
         .onAppear {
             viewModel.viewDidAppear()
         }

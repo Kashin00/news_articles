@@ -9,7 +9,6 @@ import Foundation
 
 protocol NewsArticlesViewModelInput: ObservableObject {
     var articles: [Article] { get set }
-    var searchedArticles: [Article] { get }
     var searchRequest: SearchRequest { get set }
     var isLoading: Bool { get }
     
