@@ -22,6 +22,8 @@ struct ArticleView: View {
                     .font(.subheadline)
                     .lineLimit(5)
             }
+            
+            Text(arcticle.publishedAt)
         }
     }
 }

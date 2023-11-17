@@ -20,18 +20,12 @@ struct DatePickerView: View {
                 viewModel.searchRequest.fromDate = value
             }
             
-            let toDateBinding = Binding {
-                viewModel.searchRequest.toDate ?? Date()
-            } set: { value, _ in
-                viewModel.searchRequest.toDate = value
-            }
-
             DatePicker(selection: fromDateBinding, in: ...Date(), displayedComponents: [.date]) {
                 Text("news_from_date")
                     .font(.headline)
             }
             
-            DatePicker(selection: toDateBinding,
+            DatePicker(selection: $viewModel.searchRequest.toDate,
                        in: fromDateBinding.wrappedValue...Date(),
                        displayedComponents: [.date]) {
                 Text("news_to_date")

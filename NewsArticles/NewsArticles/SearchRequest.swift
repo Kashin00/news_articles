@@ -11,8 +11,25 @@ struct SearchRequest {
     
     var text = ""
     var fromDate:  Date?
-    var toDate: Date?
+    var toDate = Date()
     var sortType: SortType?
+    
+    private let dateFormatter: DateFormatter = {
+        $0.dateFormat = "yyyy-MM-dd"
+        return $0
+    }(DateFormatter())
+    
+    var toDateString: String {
+        return dateFormatter.string(from: toDate)
+    }
+    
+    var fromDateString: String {
+        if let fromDate {
+            return dateFormatter.string(from: fromDate)
+        } else {
+            return ""
+        }
+    }
 }
 
 enum SortType: String, CaseIterable, Identifiable {
