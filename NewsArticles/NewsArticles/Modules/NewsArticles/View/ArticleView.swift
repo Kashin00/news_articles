@@ -23,7 +23,7 @@ struct ArticleView: View {
                     .lineLimit(5)
             }
             
-            Text(arcticle.publishedAt)
+            Text(arcticle.convertedPublishedAtDate)
         }
     }
 }

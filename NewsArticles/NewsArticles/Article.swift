@@ -33,4 +33,11 @@ struct Article: Codable, Identifiable {
         let url = URL(string: urlToImage)
         return url
     }
+    
+    var convertedPublishedAtDate: String {
+        if let date = GlobalDateFormatter.dateFormatter.date(from: publishedAt)?.removeTimeStamp() {
+            return GlobalDateFormatter.date(from: date, with: "dd MMM yyyy")
+        }
+        return ""
+    }
 }

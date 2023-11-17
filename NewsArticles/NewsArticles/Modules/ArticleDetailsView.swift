@@ -39,7 +39,7 @@ struct ArticleDetailsView: View {
                     
                     HStack(spacing: 0) {
                         Text("published_at")
-                        Text(article.publishedAt)
+                        Text(article.convertedPublishedAtDate)
                     }
                     .font(.subheadline)
                     

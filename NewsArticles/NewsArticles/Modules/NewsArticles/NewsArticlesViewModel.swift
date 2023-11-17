@@ -27,11 +27,6 @@ class NewsArticlesViewModel: NewsArticlesViewModelInput {
     private let dataHandler: NewsArticlesViewModelDataHandlerInput
     var cancellables: Set<AnyCancellable> = Set()
     
-    private lazy var dateFormatter: DateFormatter = {
-        $0.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        return $0
-    }(DateFormatter())
-    
     init(dataHandler: NewsArticlesViewModelDataHandlerInput = NewsArticlesViewModelDataHandler()) {
         self.dataHandler = dataHandler
         observeDateChanging()
@@ -73,11 +68,11 @@ class NewsArticlesViewModel: NewsArticlesViewModelInput {
             }
         case .dateAscending:
             articles.sort {
-                dateFormatter.date(from: $0.publishedAt) ?? Date() < dateFormatter.date(from: $1.publishedAt) ?? Date()
+                GlobalDateFormatter.dateFormatter.date(from: $0.publishedAt) ?? Date() < GlobalDateFormatter.dateFormatter.date(from: $1.publishedAt) ?? Date()
             }
         case .dateDescending:
             articles.sort {
-                dateFormatter.date(from: $0.publishedAt) ?? Date() > dateFormatter.date(from: $1.publishedAt) ?? Date()
+                GlobalDateFormatter.dateFormatter.date(from: $0.publishedAt) ?? Date() > GlobalDateFormatter.dateFormatter.date(from: $1.publishedAt) ?? Date()
             }
         }
     }
@@ -85,7 +80,7 @@ class NewsArticlesViewModel: NewsArticlesViewModelInput {
     private func observeDateChanging() {
         $searchRequest.sink { input in
             self.articles = self.currentArticles.filter({ article in
-                guard let date = self.dateFormatter.date(from: article.publishedAt)?.removeTimeStamp(),
+                guard let date = GlobalDateFormatter.dateFormatter.date(from: article.publishedAt)?.removeTimeStamp(),
                       let toDate = input.toDate.removeTimeStamp()
                 else { return false }
                 
