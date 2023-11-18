@@ -12,7 +12,7 @@ struct SearchRequest {
     var text = ""
     var fromDate:  Date?
     var toDate = Date()
-    var sortType: SortType?
+    var sortType: SortType = .byDefault
     
     private let dateFormatter: DateFormatter = {
         $0.dateFormat = "yyyy-MM-dd"
@@ -38,6 +38,7 @@ enum SortType: String, CaseIterable, Identifiable {
         return self
     }
     
+    case byDefault = "default"
     case byTitle = "by_title"
     case byAuthor = "by_author"
     case dateAscending = "date_ascending"

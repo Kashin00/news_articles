@@ -61,6 +61,7 @@ struct NewsArticlesView<ViewModel>: View where ViewModel: NewsArticlesViewModelI
                 SortTypeButton(sortType: item) {
                     viewModel.sortButtonTapped(with: $0)
                 }
+                .disabled(item == viewModel.searchRequest.sortType)
             }
         } label: {
             Image(systemName: "line.3.horizontal.decrease.circle.fill")

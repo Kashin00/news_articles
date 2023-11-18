@@ -58,6 +58,8 @@ class NewsArticlesViewModel: NewsArticlesViewModelInput {
     func sortButtonTapped(with sortType: SortType) {
         searchRequest.sortType = sortType
         switch sortType {
+        case .byDefault:
+            articles = currentArticles
         case .byTitle:
             articles.sort {
                 $0.title < $1.title
