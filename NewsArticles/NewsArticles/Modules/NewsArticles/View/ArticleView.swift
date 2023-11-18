@@ -13,7 +13,7 @@ struct ArticleView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text(arcticle.title)
+            Text(arcticle.title ?? "")
                 .font(.headline)
                 .lineLimit(3)
             

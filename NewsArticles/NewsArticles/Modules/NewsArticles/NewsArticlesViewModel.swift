@@ -51,6 +51,7 @@ class NewsArticlesViewModel: NewsArticlesViewModelInput {
             Task {
                 articles = try await dataHandler.searchArticles(for: searchRequest) ?? []
                 currentArticles = articles
+                sortButtonTapped(with: searchRequest.sortType)
             }
         }
     }
@@ -62,7 +63,7 @@ class NewsArticlesViewModel: NewsArticlesViewModelInput {
             articles = currentArticles
         case .byTitle:
             articles.sort {
-                $0.title < $1.title
+                $0.title ?? "" < $1.title ?? ""
             }
         case .byAuthor:
             articles.sort {
@@ -70,11 +71,11 @@ class NewsArticlesViewModel: NewsArticlesViewModelInput {
             }
         case .dateAscending:
             articles.sort {
-                GlobalDateFormatter.dateFormatter.date(from: $0.publishedAt) ?? Date() < GlobalDateFormatter.dateFormatter.date(from: $1.publishedAt) ?? Date()
+                GlobalDateFormatter.dateFormatter.date(from: $0.publishedAt ?? "") ?? Date() < GlobalDateFormatter.dateFormatter.date(from: $1.publishedAt ?? "") ?? Date()
             }
         case .dateDescending:
             articles.sort {
-                GlobalDateFormatter.dateFormatter.date(from: $0.publishedAt) ?? Date() > GlobalDateFormatter.dateFormatter.date(from: $1.publishedAt) ?? Date()
+                GlobalDateFormatter.dateFormatter.date(from: $0.publishedAt ?? "") ?? Date() > GlobalDateFormatter.dateFormatter.date(from: $1.publishedAt ?? "") ?? Date()
             }
         }
     }
@@ -87,7 +88,7 @@ class NewsArticlesViewModel: NewsArticlesViewModelInput {
             }
             .sink { fromDate, toDate in
                 self.articles = self.currentArticles.filter({ article in
-                    guard let date = GlobalDateFormatter.dateFormatter.date(from: article.publishedAt)?.removeTimeStamp(),
+                    guard let date = GlobalDateFormatter.dateFormatter.date(from: article.publishedAt ?? "")?.removeTimeStamp(),
                           let toDate = toDate.removeTimeStamp()
                     else { return false }
                     

@@ -31,7 +31,7 @@ struct ArticleDetailsView: View {
                     }
                     .font(.subheadline)
                     
-                    Text(article.title)
+                    Text(article.title ?? "")
                         .font(.headline)
                     
                     Text(article.description ?? "")
