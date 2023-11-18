@@ -80,18 +80,24 @@ class NewsArticlesViewModel: NewsArticlesViewModelInput {
     }
     
     private func observeDateChanging() {
-        $searchRequest.sink { input in
-            self.articles = self.currentArticles.filter({ article in
-                guard let date = GlobalDateFormatter.dateFormatter.date(from: article.publishedAt)?.removeTimeStamp(),
-                      let toDate = input.toDate.removeTimeStamp()
-                else { return false }
-                
-                if let fromDate = input.fromDate?.removeTimeStamp() {
-                    return date >= fromDate && date <= toDate
-                } else {
-                    return date <= toDate
-                }
-            })
-        }.store(in: &cancellables)
+        Publishers.CombineLatest($searchRequest.map(\.fromDate), $searchRequest.map(\.toDate))
+            .filter { fromDate, toDate in
+                self.searchRequest.fromDate?.removeTimeStamp() != fromDate?.removeTimeStamp() ||
+                self.searchRequest.toDate.removeTimeStamp() != toDate.removeTimeStamp()
+            }
+            .sink { fromDate, toDate in
+                self.articles = self.currentArticles.filter({ article in
+                    guard let date = GlobalDateFormatter.dateFormatter.date(from: article.publishedAt)?.removeTimeStamp(),
+                          let toDate = toDate.removeTimeStamp()
+                    else { return false }
+                    
+                    if let fromDate = fromDate?.removeTimeStamp() {
+                        return date >= fromDate && date <= toDate
+                    } else {
+                        return date <= toDate
+                    }
+                })
+            }
+            .store(in: &cancellables)
     }
 }
