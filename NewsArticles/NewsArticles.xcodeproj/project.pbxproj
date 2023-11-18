@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		BA294F792B08C53A008B3EB0 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA294F782B08C53A008B3EB0 /* LoaderView.swift */; };
+		BA294F7C2B08D321008B3EB0 /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA294F7B2B08D321008B3EB0 /* NetworkingError.swift */; };
+		BA294F7E2B08D34A008B3EB0 /* NetworkManagerInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA294F7D2B08D34A008B3EB0 /* NetworkManagerInput.swift */; };
 		BA40C0E52B07F7D600727DC6 /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA40C0E42B07F7D600727DC6 /* DatePickerView.swift */; };
 		BA40C0E72B08168300727DC6 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA40C0E62B08168300727DC6 /* Date+Extensions.swift */; };
 		BA40C0ED2B081CCF00727DC6 /* ArticleDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA40C0EC2B081CCF00727DC6 /* ArticleDetailsView.swift */; };
@@ -35,6 +37,8 @@
 
 /* Begin PBXFileReference section */
 		BA294F782B08C53A008B3EB0 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
+		BA294F7B2B08D321008B3EB0 /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
+		BA294F7D2B08D34A008B3EB0 /* NetworkManagerInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerInput.swift; sourceTree = "<group>"; };
 		BA40C0E42B07F7D600727DC6 /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 		BA40C0E62B08168300727DC6 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		BA40C0EC2B081CCF00727DC6 /* ArticleDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailsView.swift; sourceTree = "<group>"; };
@@ -72,6 +76,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA294F7A2B08D30E008B3EB0 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				BA294F7B2B08D321008B3EB0 /* NetworkingError.swift */,
+			);
+			name = Errors;
+			sourceTree = "<group>";
+		};
 		BA40C0EA2B081C8F00727DC6 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +201,7 @@
 		BAAADF5E2B06677C00553127 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				BA294F7A2B08D30E008B3EB0 /* Errors */,
 				BAAADF622B06685800553127 /* Models */,
 				BAAADF5F2B06678900553127 /* Managers */,
 			);
@@ -198,6 +211,7 @@
 		BAAADF5F2B06678900553127 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				BA294F7D2B08D34A008B3EB0 /* NetworkManagerInput.swift */,
 				BAAADF602B06679B00553127 /* NetworkManager.swift */,
 			);
 			path = Managers;
@@ -296,6 +310,7 @@
 			files = (
 				BA78B8452B0756F900267217 /* SortTypeButton.swift in Sources */,
 				BAAADF6C2B0679F900553127 /* RequestItem.swift in Sources */,
+				BA294F7C2B08D321008B3EB0 /* NetworkingError.swift in Sources */,
 				BA40C0EF2B081E1B00727DC6 /* ArticleMock.swift in Sources */,
 				BAAADF712B0681F500553127 /* NewsArticlesViewModelDataHandler.swift in Sources */,
 				BAAADF612B06679B00553127 /* NetworkManager.swift in Sources */,
@@ -307,6 +322,7 @@
 				BAAADF682B0668B100553127 /* ArticleSource.swift in Sources */,
 				BA40C0E52B07F7D600727DC6 /* DatePickerView.swift in Sources */,
 				BA78B8432B07566300267217 /* String+Extensions.swift in Sources */,
+				BA294F7E2B08D34A008B3EB0 /* NetworkManagerInput.swift in Sources */,
 				BAAADF4C2B065BD500553127 /* NewsArticlesApp.swift in Sources */,
 				BA40C0F32B08311C00727DC6 /* DateFormatter+Extensions.swift in Sources */,
 				BAAADF6A2B0679E900553127 /* SearchRequest.swift in Sources */,

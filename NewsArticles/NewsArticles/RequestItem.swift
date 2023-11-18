@@ -12,7 +12,7 @@ protocol EndPointType {
     var version: String { get }
     var path: String { get }
     var headers: String { get }
-    var url: URL { get }
+    var url: URL? { get }
     var httpMethod: String { get }
 }
 
@@ -65,7 +65,7 @@ extension RequestItem: EndPointType {
         }
     }
     
-    var url: URL {
-        return URL(string: baseURL + version + path + headers)!
+    var url: URL? {
+        return URL(string: baseURL + version + path + headers)
     }
 }
