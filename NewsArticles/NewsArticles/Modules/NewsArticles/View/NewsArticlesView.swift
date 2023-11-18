@@ -18,7 +18,7 @@ struct NewsArticlesView<ViewModel>: View where ViewModel: NewsArticlesViewModelI
                 articlesList
                 
                 if viewModel.isLoading {
-                    ProgressView()
+                    LoaderView()
                 }
             }
             .navigationTitle("articles")

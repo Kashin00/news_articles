@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA294F792B08C53A008B3EB0 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA294F782B08C53A008B3EB0 /* LoaderView.swift */; };
 		BA40C0E52B07F7D600727DC6 /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA40C0E42B07F7D600727DC6 /* DatePickerView.swift */; };
 		BA40C0E72B08168300727DC6 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA40C0E62B08168300727DC6 /* Date+Extensions.swift */; };
 		BA40C0ED2B081CCF00727DC6 /* ArticleDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA40C0EC2B081CCF00727DC6 /* ArticleDetailsView.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BA294F782B08C53A008B3EB0 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		BA40C0E42B07F7D600727DC6 /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 		BA40C0E62B08168300727DC6 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		BA40C0EC2B081CCF00727DC6 /* ArticleDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailsView.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				BAAADF4D2B065BD500553127 /* NewsArticlesView.swift */,
+				BA294F782B08C53A008B3EB0 /* LoaderView.swift */,
 				BA827B782B0682A000BF0CFC /* ArticleView.swift */,
 				BA78B8442B0756F900267217 /* SortTypeButton.swift */,
 				BA40C0E42B07F7D600727DC6 /* DatePickerView.swift */,
@@ -308,6 +311,7 @@
 				BA40C0F32B08311C00727DC6 /* DateFormatter+Extensions.swift in Sources */,
 				BAAADF6A2B0679E900553127 /* SearchRequest.swift in Sources */,
 				BA40C0ED2B081CCF00727DC6 /* ArticleDetailsView.swift in Sources */,
+				BA294F792B08C53A008B3EB0 /* LoaderView.swift in Sources */,
 				BAAADF5D2B0666B700553127 /* NewsArticlesViewModel.swift in Sources */,
 				BAAADF642B06686800553127 /* ArticlesResponse.swift in Sources */,
 				BA827B792B0682A000BF0CFC /* ArticleView.swift in Sources */,
